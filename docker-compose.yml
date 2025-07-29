@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: statedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Passw0rd
+      - POSTGRES_USER=emp
+      - POSTGRES_DB=statedb
+
+volumes:
+    postgres_data:
+        driver: local
